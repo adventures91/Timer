@@ -45,15 +45,22 @@ public:
   
   /**
    * This method will generate a pulse of !startingValue, occuring period after the
-   * call of this method and lasting for period. The Pin will be left in !startingValue.
+   * call of this method and lasting for period. The Pin will be left in startingValue.
    */
   int8_t pulse(uint8_t pin, unsigned long period, uint8_t startingValue);
   
   /**
    * This method will generate a pulse of pulseValue, starting immediately and of
-   * length period. The pin will be left in the !pulseValue state
+   * length period. The pin will be left in the pulseValue state
    */
   int8_t pulseImmediate(uint8_t pin, unsigned long period, uint8_t pulseValue);
+
+  /**
+    * This method will toggle the pin from startingValue to !startingValue
+    * occurring period after the call of this method.
+    */
+  int8_t toggle(uint8_t pin, unsigned long period, uint8_t startingValue)
+
   void stop(int8_t id);
   void update(void);
   void update(unsigned long now);

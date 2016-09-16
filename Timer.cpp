@@ -57,6 +57,13 @@ int8_t Timer::after(unsigned long period, void (*callback)())
 	return every(period, callback, 1);
 }
 
+int8_t Timer::toggle(uint8_t pin, unsigned long period, uint8_t startingValue)
+{
+	int8_t i = oscillate(pin, period, startingValue, 1);
+	_events[i].repeatCount = 1;
+	return i;
+}
+
 int8_t Timer::oscillate(uint8_t pin, unsigned long period, uint8_t startingValue, int repeatCount)
 {
 	int8_t i = findFreeEventIndex();
