@@ -59,7 +59,7 @@ public:
     * This method will toggle the pin from startingValue to !startingValue
     * occurring period after the call of this method.
     */
-  int8_t toggle(uint8_t pin, unsigned long period, uint8_t startingValue)
+  int8_t toggle(uint8_t pin, unsigned long period, uint8_t startingValue);
 
   void stop(int8_t id);
   void update(void);
